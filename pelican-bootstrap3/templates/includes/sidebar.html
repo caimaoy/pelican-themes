@@ -53,7 +53,7 @@
 
         {% if DISPLAY_TAGS_ON_SIDEBAR %}
             {% if DISPLAY_TAGS_INLINE %}
-                {% set tags = tag_cloud | sort(attribute='0') %}
+                {% set tags = tag_cloud | sort(attribute='1') %}
             {% else %}
                 {% set tags = tag_cloud | sort(attribute='1') %}
             {% endif %}
