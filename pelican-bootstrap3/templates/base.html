@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"
+      {% if WEIBO_FOLLOW %}
+        xmlns:wb="http://open.weibo.com/wb"
+      {% endif %}
       {% if USE_OPEN_GRAPH %}
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml"{% endif %}>
@@ -89,6 +92,9 @@
     {% if FEED_ALL_RSS %}
         <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
               title="{{ SITENAME }} RSS Feed"/>
+    {% endif %}
+    {% if WEIBO_FOLLOW %}
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
     {% endif %}
 
 </head>
